@@ -1,0 +1,21 @@
+package com.example.tornadomod;
+
+import com.example.tornadomod.command.SummonTornadoCommand;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod("tornadomod")
+public class TornadoMod {
+    public TornadoMod() {
+        // Mod initialization
+    }
+
+    @Mod.EventBusSubscriber
+    public static class EventHandlers {
+        @SubscribeEvent
+        public static void registerCommands(RegisterCommandsEvent event) {
+            SummonTornadoCommand.register(event.getDispatcher());
+        }
+    }
+}
